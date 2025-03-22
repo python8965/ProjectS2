@@ -1,15 +1,29 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <engine:VisualElement style="flex-grow: 1; align-self: center; position: absolute;">
-        <engine:Label text="-00:00" style="font-size: 45px;" />
+    <engine:VisualElement name="Top" style="flex-grow: 1; align-self: center; position: absolute;">
+        <engine:Label text="-00:00" style="font-size: 45px;">
+            <Bindings>
+                <engine:DataBinding property="text" data-source-path="Time" data-source-type="UIBinding, Assembly-CSharp" binding-mode="ToTarget" />
+            </Bindings>
+        </engine:Label>
     </engine:VisualElement>
-    <engine:VisualElement style="flex-grow: 1; position: absolute; right: 0;">
-        <engine:Label text="Label" />
+    <engine:VisualElement name="RightUp" style="flex-grow: 1; position: absolute; right: 0;">
+        <engine:Label text="Label" style="font-size: 52px;" />
     </engine:VisualElement>
-    <engine:VisualElement style="flex-grow: 1; position: absolute; top: 40%; left: 45%; align-self: auto; align-content: flex-start; justify-content: flex-start; right: 45%; bottom: 40%; width: auto;">
-        <engine:ProgressBar value="22" name="HpBar" />
+    <engine:VisualElement name="Center" style="flex-grow: 1; position: absolute; top: 40%; left: 45%; align-self: auto; align-content: flex-start; justify-content: flex-start; right: 45%; bottom: 40%; width: auto;">
+        <engine:ProgressBar value="22" name="HpBar">
+            <Bindings>
+                <engine:DataBinding property="value" data-source-path="Hp" data-source-type="UIBinding, Assembly-CSharp" binding-mode="ToTarget" />
+            </Bindings>
+        </engine:ProgressBar>
         <engine:VisualElement style="flex-grow: 1; height: 86px; width: 150px;" />
     </engine:VisualElement>
-    <engine:VisualElement style="flex-grow: 1; bottom: 0; position: absolute; flex-shrink: 1; width: 100%;">
-        <engine:ProgressBar value="22" name="LevelBar" />
+    <engine:VisualElement name="Bottom" style="flex-grow: 1; bottom: 0; position: absolute; flex-shrink: 1; width: 100%;">
+        <engine:ProgressBar value="22" name="LevelBar" high-value="1" style="background-image: url(&quot;project://database/Assets/ProjectS2/UI/ProgressBarTex.png?fileID=2750298860172458669&amp;guid=ade54f22f86d7654698901260a07b1ff&amp;type=3#04_0&quot;);">
+            <Bindings>
+                <engine:DataBinding property="value" data-source-path="XPratio" data-source-type="UIBinding, Assembly-CSharp" binding-mode="ToTarget" />
+                <engine:DataBinding property="title" data-source-path="Level" data-source-type="UIBinding, Assembly-CSharp" binding-mode="ToTarget" />
+            </Bindings>
+        </engine:ProgressBar>
+        <engine:VisualElement style="flex-grow: 1; height: 36px; background-image: url(&quot;project://database/Assets/ProjectS2/UI/ProgressBarTex.png?fileID=2750298860172458669&amp;guid=ade54f22f86d7654698901260a07b1ff&amp;type=3#04_0&quot;); background-repeat: round round; background-size: 100% 100%; -unity-background-scale-mode: stretch-to-fill; -unity-slice-left: 8; -unity-slice-scale: 3.2px; -unity-slice-top: 2; -unity-slice-right: 8; -unity-slice-bottom: 4;" />
     </engine:VisualElement>
 </engine:UXML>
